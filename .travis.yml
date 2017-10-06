@@ -7,10 +7,3 @@ cache:
 script:
   - npm run build
   - npm test
-deploy:
-  provider: surge
-  local_dir: build
-  domain: fcc-camper-leaderboard.surge.sh
-  skip_cleanup: true
-  on:
-    branch: master
