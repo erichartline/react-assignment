@@ -10,7 +10,7 @@ class App extends Component {
       <Container>
         <Header />
         <AddItem />
-        {/* <ItemList /> */}
+        <ItemList />
       </Container>
     )
   }

@@ -4,7 +4,6 @@ import { injectGlobal } from "styled-components"
 injectGlobal`
   * { box-sizing: border-box; }
   body { margin: 0; background-color: #e3ecff; }
-  ul { list-style: none }
 `
 
 export const Container = styled.div`
@@ -12,12 +11,16 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  ul {
+    list-style: none;
+  }
 `
 
 export const List = styled.div`
   background-color: #e0c298;
   padding-top: 5px;
   margin-top: 5px;
+  height: 100%;
 `
 
 export const Item = styled.li`

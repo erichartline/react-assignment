@@ -1,57 +1,44 @@
-import React, { Component } from "react"
-import SingleItem from "./SingleItem"
-import { InputBar, List } from "../styles"
+import React from "react"
+import { connect } from "react-redux"
+import { addItem } from "../actions"
+import { InputBar } from "../styles"
 
-class AddItem extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      text: "",
-      items: ["Redux", "Rebass", "Webpack"],
-      counter: 3,
-    }
-  }
+// should be functional component since display doesn't change based on data
 
-  static defaultProps = {
-    text: "",
-    items: [],
-    counter: 0,
-  }
+let AddItem = ({ onSubmit }) => {
+  let input
 
-  onChange = e => {
-    this.setState({ text: e.target.value })
-  }
+  return (
+    <div>
+      <InputBar>
+        <form
+          onSubmit={e => {
+            e.preventDefault()
+            if (!input.value.trim()) {
+              return
+            }
+            onSubmit(input.value)
+            input.value = ""
+          }}>
+          <input
+            ref={node => {
+              input = node
+            }}
+            placeholder="Add an item"
+          />
+          <button type="submit">Add item</button>
+        </form>
+      </InputBar>
+    </div>
+  )
+}
 
-  onSubmit = e => {
-    e.preventDefault()
-    this.setState({
-      text: "",
-      items: [...this.state.items, this.state.text],
-      counter: this.state.counter + 1,
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <InputBar>
-          <form onSubmit={this.onSubmit}>
-            <input
-              type="text"
-              value={this.state.text}
-              onChange={this.onChange}
-              placeholder="Add an item"
-            />
-            <button type="submit">Add item</button>
-          </form>
-        </InputBar>
-        <List>
-          <h2>My Items ({this.state.counter})</h2>
-          <SingleItem items={this.state.items} />
-        </List>
-      </div>
-    )
+const mapDispatchToProps = dispatch => {
+  return {
+    onSubmit: text => {
+      dispatch(addItem(text))
+    },
   }
 }
 
-export default AddItem
+export default connect(mapDispatchToProps)(AddItem)
