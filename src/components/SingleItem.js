@@ -5,7 +5,8 @@ const Item = styled.div`
   background-color: #F94343;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin: 5px;
+  margin: 10px auto 10px auto;
+  width: 35%;
 `;
 
 const SingleItem = (props) => {

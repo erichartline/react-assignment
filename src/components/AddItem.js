@@ -26,8 +26,8 @@ class AddItem extends Component {
     return (
       <InputBar>
         <form>
-          <input type="text" placeholder="What do you want to add?" />
-          <button>Add item</button>
+          <input type="text" placeholder="Add an item" />
+          <button type="submit">Add item</button>
         </form>
       </InputBar>
     )
