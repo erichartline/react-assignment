@@ -1,24 +1,14 @@
 import React, { Component } from "react"
 import SingleItem from "./SingleItem"
-import styled from "styled-components"
-
-const InputBar = styled.div`
-  background-color: #c3c3bb;
-  padding-top: 10px;
-  padding-bottom: 10px;
-`
-
-const List = styled.div`
-  background-color: #c3c3bb;
-`
+import { InputBar, List } from "../styles"
 
 class AddItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
       text: "",
-      items: [],
-      counter: 0,
+      items: ["Redux", "Rebass", "Webpack"],
+      counter: 3,
     }
   }
 

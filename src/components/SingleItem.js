@@ -4,9 +4,9 @@ import { Item } from "../styles"
 const SingleItem = props => {
   return (
     <div>
-      <Item>
-        <ul>{props.items.map((item, index) => <li key={index}>{item}</li>)}</ul>
-      </Item>
+      <ul>
+        {props.items.map((item, index) => <Item key={index}>{item}</Item>)}
+      </ul>
     </div>
   )
 }

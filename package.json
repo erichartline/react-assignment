@@ -7,15 +7,16 @@
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.14",
+    "rebass": "^1.0.4",
     "redux": "^3.7.2",
     "styled-components": "^2.2.1"
   },
   "lint-staged": {
-   "src/**/*.{js,jsx,json,css}": [
-     "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
-     "git add"
-   ]
- },
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --no-semi --trailing-comma all --jsx-bracket-same-line true --write",
+      "git add"
+    ]
+  },
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts start",
