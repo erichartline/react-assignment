@@ -1,20 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const Item = styled.div`
-  background-color: #f94343;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 10px auto 10px auto;
-  width: 35%;
-`;
+import React from "react"
+import { Item } from "../styles"
 
 const SingleItem = props => {
   return (
     <div>
-      <ul>{props.items.map((item, index) => <li key={index}>{item}</li>)}</ul>
+      <Item>
+        <ul>{props.items.map((item, index) => <li key={index}>{item}</li>)}</ul>
+      </Item>
     </div>
-  );
-};
+  )
+}
 
-export default SingleItem;
+export default SingleItem
