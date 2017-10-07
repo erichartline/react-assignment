@@ -18,6 +18,7 @@ export const List = styled.div`
   background-color: #e0c298;
   padding-top: 5px;
   margin-top: 5px;
+  height: 100%;
 `
 
 export const Item = styled.li`
@@ -33,4 +34,17 @@ export const InputBar = styled.div`
   background-color: #c3c3bb;
   padding-top: 10px;
   padding-bottom: 10px;
+`
+
+export const DeleteItem = styled.div`
+  text-align: right;
+  a {
+    text-decoration: none;
+  }
+`
+
+export const InputBox = styled.input`
+  width: 400px;
+  padding-left: 5px;
+  margin-right: 5px;
 `

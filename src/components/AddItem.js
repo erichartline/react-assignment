@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import SingleItem from "./SingleItem"
-import { InputBar, List } from "../styles"
+import { InputBar, InputBox, List } from "../styles"
 
 class AddItem extends Component {
   constructor(props) {
@@ -24,6 +24,9 @@ class AddItem extends Component {
 
   onSubmit = e => {
     e.preventDefault()
+    if (!this.state.text.trim()) {
+      return
+    }
     this.setState({
       text: "",
       items: [...this.state.items, this.state.text],
@@ -31,23 +34,31 @@ class AddItem extends Component {
     })
   }
 
+  deleteItem = item => {
+    let newItem = this.state.items.filter(_item => {
+      return _item !== item
+    })
+
+    this.setState({ items: newItem, counter: this.state.counter - 1 })
+  }
+
   render() {
     return (
       <div>
         <InputBar>
           <form onSubmit={this.onSubmit}>
-            <input
+            <InputBox
               type="text"
               value={this.state.text}
               onChange={this.onChange}
-              placeholder="Add an item"
+              placeholder="Add an item..."
             />
             <button type="submit">Add item</button>
           </form>
         </InputBar>
         <List>
           <h2>My Items ({this.state.counter})</h2>
-          <SingleItem items={this.state.items} />
+          <SingleItem items={this.state.items} deleteItem={this.deleteItem} />
         </List>
       </div>
     )
