@@ -3,13 +3,13 @@ import SingleItem from './SingleItem';
 import styled from 'styled-components';
 
 const InputBar = styled.div`
-  background-color: #C3C3BB;
+  background-color: #c3c3bb;
   padding-top: 10px;
   padding-bottom: 10px;
 `;
 
 const List = styled.div`
-  background-color: #C3C3BB;
+  background-color: #c3c3bb;
 `;
 
 class AddItem extends Component {
@@ -26,27 +26,32 @@ class AddItem extends Component {
     text: '',
     items: [],
     counter: 0
-  }
+  };
 
-  onChange = (e) => {
+  onChange = e => {
     this.setState({ text: e.target.value });
-  }
+  };
 
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
     this.setState({
       text: '',
       items: [...this.state.items, this.state.text],
       counter: this.state.counter + 1
     });
-  }
+  };
 
   render() {
     return (
       <div>
         <InputBar>
           <form onSubmit={this.onSubmit}>
-            <input type="text" value={this.state.text} onChange={this.onChange} placeholder="Add an item" />
+            <input
+              type="text"
+              value={this.state.text}
+              onChange={this.onChange}
+              placeholder="Add an item"
+            />
             <button type="submit">Add item</button>
           </form>
         </InputBar>
@@ -55,8 +60,7 @@ class AddItem extends Component {
           <SingleItem items={this.state.items} />
         </List>
       </div>
-
-    )
+    );
   }
 }
 

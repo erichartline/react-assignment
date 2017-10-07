@@ -3,9 +3,8 @@ import SingleItem from './SingleItem';
 import styled from 'styled-components';
 
 const List = styled.div`
-  background-color: #C3C3BB;
+  background-color: #c3c3bb;
 `;
-
 
 class ItemList extends Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class ItemList extends Component {
 
     this.state = {
       counter: 0
-    }
+    };
   }
 
   render() {
@@ -22,7 +21,7 @@ class ItemList extends Component {
         <h2>My Items ({this.state.counter})</h2>
         <SingleItem />
       </List>
-    )
+    );
   }
 }
 

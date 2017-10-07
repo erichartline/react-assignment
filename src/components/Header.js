@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Header = (props) => {
+const Header = props => {
   // any non jsx code
   return (
     // jsx code here
     <h2>Manage my items</h2>
-  )
-}
+  );
+};
 
 export default Header;
 
@@ -17,5 +17,5 @@ export default Header;
 // es6 spread operator, look here
 // https://davidwalsh.name/spread-operator
 // const MyComponent = ({items,data}) =>
-    // jsx code here, no return or paranthesis necessary at all
+// jsx code here, no return or paranthesis necessary at all
 // export default MyComponent

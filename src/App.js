@@ -3,10 +3,10 @@ import AddItem from './components/AddItem';
 import Header from './components/Header';
 import ItemList from './components/ItemList';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #E3ECFF;
+  background-color: #e3ecff;
   text-align: center;
 `;
 
