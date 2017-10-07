@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react"
 
 const Header = props => {
   // any non jsx code
   return (
     // jsx code here
-    <h2>Manage my items</h2>
-  );
-};
+    <h1>Manage my items</h1>
+  )
+}
 
-export default Header;
+export default Header
 
 // If the component has only jsx code, then it can be even
 // more simplified
