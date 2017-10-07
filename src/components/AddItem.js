@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SingleItem from './SingleItem';
 import styled from 'styled-components';
 
 const InputBar = styled.div`
@@ -7,29 +8,54 @@ const InputBar = styled.div`
   padding-bottom: 10px;
 `;
 
+const List = styled.div`
+  background-color: #C3C3BB;
+`;
+
 class AddItem extends Component {
-  state = { text: '' } // no need for constructor
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: '',
+      items: [],
+      counter: 0
+    };
+  }
 
   static defaultProps = {
-    text: ''
+    text: '',
+    items: [],
+    counter: 0
   }
-  //
-  //     method = () => {
-  //         // It is a bound method, means `this` is preserved
-  //     }
-  //
-  //     methodWithParams = (params) => {
-  //         // Bound method with passed parameters
-  //     }
-  //
+
+  onChange = (e) => {
+    this.setState({ text: e.target.value });
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      text: '',
+      items: [...this.state.items, this.state.text],
+      counter: this.state.counter + 1
+    });
+  }
+
   render() {
     return (
-      <InputBar>
-        <form>
-          <input type="text" placeholder="Add an item" />
-          <button type="submit">Add item</button>
-        </form>
-      </InputBar>
+      <div>
+        <InputBar>
+          <form onSubmit={this.onSubmit}>
+            <input type="text" value={this.state.text} onChange={this.onChange} placeholder="Add an item" />
+            <button type="submit">Add item</button>
+          </form>
+        </InputBar>
+        <List>
+          <h2>My Items ({this.state.counter})</h2>
+          <SingleItem items={this.state.items} />
+        </List>
+      </div>
+
     )
   }
 }

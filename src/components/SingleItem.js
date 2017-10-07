@@ -10,14 +10,12 @@ const Item = styled.div`
 `;
 
 const SingleItem = (props) => {
-    // any non jsx code
     return (
       <div>
-        <Item>Test</Item>
-        <Item>Test</Item>
-        <Item>Test</Item>
+        <ul>{
+          props.items.map((item, index) => <li key={index}>{item}</li>)
+        }</ul>
       </div>
-      // an unordered list of items with the header giving a count of items in the list
     )
 }
 
