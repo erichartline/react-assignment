@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import SingleItem from './SingleItem';
+import styled from 'styled-components';
+
+const List = styled.div`
+  background-color: #C3C3BB;
+`;
+
 
 class ItemList extends Component {
   constructor(props) {
@@ -9,13 +15,13 @@ class ItemList extends Component {
       counter: 0
     }
   }
-  
+
   render() {
     return (
-      <div>
+      <List>
         <h2>My Items ({this.state.counter})</h2>
         <SingleItem />
-      </div>
+      </List>
     )
   }
 }

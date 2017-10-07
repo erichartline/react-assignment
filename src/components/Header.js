@@ -4,7 +4,7 @@ const Header = (props) => {
   // any non jsx code
   return (
     // jsx code here
-    <h2>Manage My Items</h2>
+    <h2>Manage my items</h2>
   )
 }
 

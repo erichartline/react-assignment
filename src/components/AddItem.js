@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
-class AddTodo extends Component {
+const InputBar = styled.div`
+  background-color: #C3C3BB;
+  padding-top: 10px;
+  padding-bottom: 10px;
+`;
+
+class AddItem extends Component {
   state = { text: '' } // no need for constructor
 
   static defaultProps = {
@@ -17,14 +24,14 @@ class AddTodo extends Component {
   //
   render() {
     return (
-      <div>
+      <InputBar>
         <form>
           <input type="text" placeholder="What do you want to add?" />
           <button>Add item</button>
         </form>
-      </div>
+      </InputBar>
     )
   }
 }
 
-export default AddTodo;
+export default AddItem;

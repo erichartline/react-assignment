@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import AddItem from './components/AddItem';
 import Header from './components/Header';
 import ItemList from './components/ItemList';
-import './App.css';
+
+import styled from "styled-components";
+
+const Container = styled.div`
+  background-color: #E3ECFF;
+  text-align: center;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Container>
         <Header />
         <AddItem />
         <ItemList />
-      </div>
+      </Container>
     );
   }
 }
