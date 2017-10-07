@@ -1,45 +1,45 @@
-import React, { Component } from 'react';
-import SingleItem from './SingleItem';
-import styled from 'styled-components';
+import React, { Component } from "react"
+import SingleItem from "./SingleItem"
+import styled from "styled-components"
 
 const InputBar = styled.div`
   background-color: #c3c3bb;
   padding-top: 10px;
   padding-bottom: 10px;
-`;
+`
 
 const List = styled.div`
   background-color: #c3c3bb;
-`;
+`
 
 class AddItem extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      text: '',
+      text: "",
       items: [],
-      counter: 0
-    };
+      counter: 0,
+    }
   }
 
   static defaultProps = {
-    text: '',
+    text: "",
     items: [],
-    counter: 0
-  };
+    counter: 0,
+  }
 
   onChange = e => {
-    this.setState({ text: e.target.value });
-  };
+    this.setState({ text: e.target.value })
+  }
 
   onSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     this.setState({
-      text: '',
+      text: "",
       items: [...this.state.items, this.state.text],
-      counter: this.state.counter + 1
-    });
-  };
+      counter: this.state.counter + 1,
+    })
+  }
 
   render() {
     return (
@@ -60,8 +60,8 @@ class AddItem extends Component {
           <SingleItem items={this.state.items} />
         </List>
       </div>
-    );
+    )
   }
 }
 
-export default AddItem;
+export default AddItem
