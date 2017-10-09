@@ -1,17 +1,15 @@
 import React from "react"
 import { Item, DeleteItem, PlainButton } from "../styles"
 
-const SingleItem = props => {
+const SingleItem = ({ items, deleteItem }) => {
   return (
     <div>
       <ul>
-        {props.items.map((item, index) => (
+        {items.map((item, index) => (
           <Item key={index}>
             {item}
             <DeleteItem>
-              <PlainButton onClick={props.deleteItem.bind(null, item)}>
-                X
-              </PlainButton>
+              <PlainButton onClick={deleteItem.bind(null, item)}>X</PlainButton>
             </DeleteItem>
           </Item>
         ))}
