@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import AddItem from "./components/AddItem"
 import Header from "./components/Header"
-// import ItemList from "./components/ItemList"
+import ItemList from "./components/ItemList"
 import { Container } from "./styles"
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
       <Container>
         <Header />
         <AddItem />
-        {/* <ItemList /> */}
+        <ItemList />
       </Container>
     )
   }
