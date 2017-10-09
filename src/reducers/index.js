@@ -8,7 +8,7 @@ const rootReducer = (state = [], action) => {
         {
           counter: action.payload.counter,
           text: action.payload.text,
-          items: action.payload.items,
+          items: [...this.state.items, action.payload.text],
         },
       ]
     case REMOVE_ITEM:
