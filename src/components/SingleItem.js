@@ -1,5 +1,5 @@
 import React from "react"
-import { Item, DeleteItem } from "../styles"
+import { Item, DeleteItem, PlainButton } from "../styles"
 
 const SingleItem = props => {
   return (
@@ -9,9 +9,9 @@ const SingleItem = props => {
           <Item key={index}>
             {item}
             <DeleteItem>
-              <a href="#" onClick={props.deleteItem.bind(null, item)}>
+              <PlainButton onClick={props.deleteItem.bind(null, item)}>
                 X
-              </a>
+              </PlainButton>
             </DeleteItem>
           </Item>
         ))}

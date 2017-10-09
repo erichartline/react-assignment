@@ -50,3 +50,9 @@ export const InputBox = styled.input`
   padding-left: 5px;
   margin-right: 5px;
 `
+
+export const PlainButton = styled.button`
+  border: none;
+  background: none;
+  outline: none;
+`
