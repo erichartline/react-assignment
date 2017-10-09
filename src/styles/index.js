@@ -55,4 +55,5 @@ export const PlainButton = styled.button`
   border: none;
   background: none;
   outline: none;
+  cursor: pointer;
 `
