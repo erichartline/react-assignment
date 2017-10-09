@@ -14,8 +14,7 @@ const rootReducer = (state = [], action) => {
         ...state,
         {
           counter: action.counter,
-          text: "",
-          items: [],
+          items: action.items.filter(item => action.payload !== item),
         },
       ]
     default:

@@ -4,6 +4,7 @@ import { addItem } from "../actions"
 import { InputBar } from "../styles"
 
 // should be functional component since display doesn't change based on data
+// add onSubmit function outside component?
 
 let AddItem = ({ onSubmit }) => {
   let input
@@ -37,6 +38,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onSubmit: text => {
       dispatch(addItem(text))
+    },
+    onDelete: text => {
+      dispatch(removeItem(text))
     },
   }
 }
