@@ -28,11 +28,7 @@ class AddItem extends Component {
     if (!this.state.text.trim()) {
       return
     }
-    this.setState({
-      text: "",
-      items: [...this.state.items, this.state.text],
-      counter: this.state.counter + 1,
-    })
+    dispatch(addItem(this.state.text))
   }
 
   render() {
@@ -56,7 +52,7 @@ class AddItem extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    submitItem: text => {
+    onSubmit: text => {
       dispatch(addItem(text))
     },
   }
