@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { Item, DeleteItem, PlainButton } from "../styles"
 import { removeItem } from "../actions"
 
-const SingleItem = ({ items, deleteItem }) => {
+const SingleItem = ({ items = [], deleteItem }) => {
   return (
     <div>
       <ul>

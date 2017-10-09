@@ -1,36 +1,65 @@
-import React from "react"
+import React, { Component } from "react"
 import { connect } from "react-redux"
 import { addItem } from "../actions"
 import { InputBar, InputBox } from "../styles"
 
-let AddItem = ({ dispatch }) => {
-  let input
+class AddItem extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      text: "",
+      items: ["Redux", "Rebass", "Webpack"],
+      counter: 3,
+    }
+  }
 
-  return (
-    <div>
-      <InputBar>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            if (!input.value.length === 0) {
-              return
-            }
-            dispatch(addItem(input.value))
-            input.value = ""
-          }}>
-          <InputBox
-            ref={node => {
-              input = node
-            }}
-            placeholder="Add an item..."
-          />
-          <button type="submit">Add item</button>
-        </form>
-      </InputBar>
-    </div>
-  )
+  static defaultProps = {
+    text: "",
+    items: [],
+    counter: 0,
+  }
+
+  onChange = e => {
+    this.setState({ text: e.target.value })
+  }
+
+  onSubmit = e => {
+    e.preventDefault()
+    if (!this.state.text.trim()) {
+      return
+    }
+    this.setState({
+      text: "",
+      items: [...this.state.items, this.state.text],
+      counter: this.state.counter + 1,
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <InputBar>
+          <form onSubmit={this.onSubmit}>
+            <InputBox
+              type="text"
+              value={this.state.text}
+              onChange={this.onChange}
+              placeholder="Add an item..."
+            />
+            <button type="submit">Add item</button>
+          </form>
+        </InputBar>
+      </div>
+    )
+  }
 }
 
-AddItem = connect()(AddItem)
+const mapDispatchToProps = dispatch => {
+  return {
+    submitItem: text => {
+      dispatch(addItem(text))
+    },
+  }
+}
 
-export default AddItem
+export default connect(null, mapDispatchToProps)(AddItem)
