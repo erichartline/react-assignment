@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import SingleItem from "./SingleItem"
-import { InputBar, InputBox, List } from "../styles"
+import { InputBar, InputBox } from "../styles"
 
 class AddItem extends Component {
   constructor(props) {
@@ -34,14 +33,6 @@ class AddItem extends Component {
     })
   }
 
-  deleteItem = item => {
-    let newItem = this.state.items.filter(_item => {
-      return _item !== item
-    })
-
-    this.setState({ items: newItem, counter: this.state.counter - 1 })
-  }
-
   render() {
     return (
       <div>
@@ -56,10 +47,6 @@ class AddItem extends Component {
             <button type="submit">Add item</button>
           </form>
         </InputBar>
-        <List>
-          <h2>My Items ({this.state.counter})</h2>
-          <SingleItem items={this.state.items} deleteItem={this.deleteItem} />
-        </List>
       </div>
     )
   }
