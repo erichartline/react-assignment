@@ -37,3 +37,16 @@ export const InputBar = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
 `
+
+export const DeleteItem = styled.div`
+  text-align: right;
+  a {
+    text-decoration: none;
+  }
+`
+
+export const InputBox = styled.input`
+  width: 400px;
+  padding-left: 5px;
+  margin-right: 5px;
+`

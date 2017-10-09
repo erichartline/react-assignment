@@ -2,18 +2,16 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import { Item } from "../styles"
 
-class SingleItem extends Component {
-  render() {
-    const { items } = this.props
-
-    return (
-      <div>
-        <ul>{items.map((item, index) => <Item key={index}>{item}</Item>)}</ul>
-      </div>
-    )
-  }
+const SingleItem = props => {
+  return (
+    <div>
+      <ul>
+        {props.items.map((item, index) => <Item key={index}>{item}</Item>)}
+      </ul>
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({ items: state.items })
 
-export default connect(mapStateToProps)(SingleItem)
+export default connect(mapStateToProps, null)(SingleItem)
