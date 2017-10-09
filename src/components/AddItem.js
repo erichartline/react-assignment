@@ -28,7 +28,6 @@ class AddItem extends Component {
     if (!this.state.text.trim()) {
       return
     }
-    dispatch(addItem(this.state.text))
   }
 
   render() {
