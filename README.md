@@ -11,3 +11,4 @@ React assignment. Bootstrapped with create-react-app.
 - [] Use redux for state management.
 - [] Add unit tests for your components, at least for the header component.
 - [] Add animation and other fun effects? Maybe a footer?
+- [] Get Travis-CI tests to pass
