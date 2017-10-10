@@ -1,8 +1,12 @@
 import React, { Component } from "react"
-import { DeleteItem, PlainButton } from "../styles"
+import { DeleteItem, PlainButton, ItemText } from "../styles"
 
 class SingleItem extends Component {
-  handleDelete() {
+  static defaultProps = {
+    item: "",
+  }
+
+  handleDelete = () => {
     this.props.actions.removeItem(this.props.item)
   }
 
@@ -10,60 +14,13 @@ class SingleItem extends Component {
     const { item } = this.props
     return (
       <div>
-        {item.text}
+        <ItemText>{item.text}</ItemText>
         <DeleteItem>
           <PlainButton onClick={this.handleDelete.bind(this)}>X</PlainButton>
         </DeleteItem>
       </div>
-      // {/* <div>
-      //   <ul>
-      //     {items.map((item, index) => (
-      //       <Item key={index}>
-      //         {item}
-      //         <DeleteItem>
-      //           <PlainButton onClick={this.handleDelete.bind(this)}>
-      //             X
-      //           </PlainButton>
-      //         </DeleteItem>
-      //       </Item>
-      //     ))}
-      //   </ul>
-      // </div> */}
     )
   }
 }
-
-// const SingleItem = ({ items = [], deleteItem }) => {
-//   return (
-//     <div>
-//       <ul>
-//         {items.map((item, index) => (
-//           <Item key={index}>
-//             {item}
-//             <DeleteItem>
-//               <PlainButton onClick={this.deleteItem.bind(null, item)}>
-//                 X
-//               </PlainButton>
-//             </DeleteItem>
-//           </Item>
-//         ))}
-//       </ul>
-//     </div>
-//   )
-// }
-//
-// const mapStateToProps = state => {
-//   return {
-//     items: state.items,
-//   }
-// }
-//
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     deleteItem: text => {
-//       dispatch(removeItem(text))
-//     },
-//   }
-// }
 
 export default SingleItem

@@ -38,15 +38,22 @@ export const InputBar = styled.div`
   padding-bottom: 10px;
 `
 
+export const ItemText = styled.div`
+  text-align: left;
+  width: 90%;
+  display: inline-block;
+`
+
 export const DeleteItem = styled.div`
   text-align: right;
+  display: inline-block;
   a {
     text-decoration: none;
   }
 `
 
 export const InputBox = styled.input`
-  width: 400px;
+  width: 50%;
   padding-left: 5px;
   margin-right: 5px;
 `

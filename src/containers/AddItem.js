@@ -2,18 +2,13 @@ import React, { Component } from "react"
 import { InputBar, InputBox } from "../styles"
 
 class AddItem extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      text: "",
-    }
-  }
+  state = { text: "" }
 
-  // static defaultProps = {
-  //   text: "",
-  //   items: [],
-  //   counter: 0,
-  // }
+  static defaultProps = {
+    text: "",
+    items: [],
+    counter: 0,
+  }
 
   handleChange = e => {
     this.setState({ text: e.target.value })
