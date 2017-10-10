@@ -14,5 +14,3 @@ export default function configureStore(initialState = { items: [] }) {
     middleware,
   )
 }
-
-// export default createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), middleware);

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Item, DeleteItem, PlainButton } from "../styles"
+import { DeleteItem, PlainButton } from "../styles"
 
 class SingleItem extends Component {
   handleDelete() {
@@ -9,14 +9,12 @@ class SingleItem extends Component {
   render() {
     const { item } = this.props
     return (
-      <Item>
-        <div>
-          {item.text}
-          <DeleteItem>
-            <PlainButton onClick={this.handleDelete.bind(this)}>X</PlainButton>
-          </DeleteItem>
-        </div>
-      </Item>
+      <div>
+        {item.text}
+        <DeleteItem>
+          <PlainButton onClick={this.handleDelete.bind(this)}>X</PlainButton>
+        </DeleteItem>
+      </div>
       // {/* <div>
       //   <ul>
       //     {items.map((item, index) => (

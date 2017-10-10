@@ -1,21 +1,20 @@
-import React, { Component } from "react"
+import React from "react"
 import SingleItem from "./SingleItem"
-import { List } from "../styles"
+import { List, Item } from "../styles"
 
-class ItemList extends Component {
-  render() {
-    const { counter, items, actions } = this.props
-    return (
-      <List>
-        <h2>My Items ({counter})</h2>
-        <ul>
-          {items.map((item, index) => {
-            return <SingleItem key={index} item={item} actions={actions} />
-          })}
-        </ul>
-      </List>
-    )
-  }
+const ItemList = ({ counter, items, actions }) => {
+  return (
+    <List>
+      <h2>My Items ({counter})</h2>
+      <ul>
+        {items.map((item, index) => (
+          <Item key={index}>
+            <SingleItem item={item} actions={actions} />
+          </Item>
+        ))}
+      </ul>
+    </List>
+  )
 }
 
 export default ItemList

@@ -6,8 +6,8 @@ import App from "./App"
 
 let initialState = {
   text: "",
-  items: ["Redux", "Rebass", "Webpack"],
-  counter: 3,
+  items: [],
+  counter: 0,
 }
 
 const store = configureStore(initialState)
