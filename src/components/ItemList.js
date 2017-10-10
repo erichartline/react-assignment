@@ -1,5 +1,5 @@
 import React from "react"
-import SingleItem from "./SingleItem"
+import SingleItem from "../containers/SingleItem"
 import { List, Item } from "../styles"
 
 const ItemList = ({ counter, items, actions }) => {
