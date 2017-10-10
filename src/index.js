@@ -1,15 +1,16 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
-import { createStore } from "redux"
-import rootReducer from "./reducers"
-import registerServiceWorker from "./registerServiceWorker"
+import configureStore from "./store/store.js"
 import App from "./App"
 
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-)
+let initialState = {
+  text: "",
+  items: ["Redux", "Rebass", "Webpack"],
+  counter: 3,
+}
+
+const store = configureStore(initialState)
 
 ReactDOM.render(
   <Provider store={store}>
@@ -17,4 +18,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root"),
 )
-registerServiceWorker()

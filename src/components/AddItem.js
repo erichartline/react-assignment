@@ -1,6 +1,4 @@
 import React, { Component } from "react"
-import { connect } from "react-redux"
-import { addItem } from "../actions"
 import { InputBar, InputBox } from "../styles"
 
 class AddItem extends Component {
@@ -8,38 +6,36 @@ class AddItem extends Component {
     super(props)
     this.state = {
       text: "",
-      items: ["Redux", "Rebass", "Webpack"],
-      counter: 3,
     }
   }
 
-  static defaultProps = {
-    text: "",
-    items: [],
-    counter: 0,
-  }
+  // static defaultProps = {
+  //   text: "",
+  //   items: [],
+  //   counter: 0,
+  // }
 
-  onChange = e => {
+  handleChange = e => {
     this.setState({ text: e.target.value })
   }
 
-  onSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault()
     if (!this.state.text.trim()) {
       return
     }
-    this.props.onSubmit(this.state.text)
+    this.props.addItem(this.state.text)
   }
 
   render() {
     return (
       <div>
         <InputBar>
-          <form onSubmit={this.onSubmit}>
+          <form onSubmit={this.handleSubmit.bind(this)}>
             <InputBox
               type="text"
               value={this.state.text}
-              onChange={this.onChange}
+              onChange={this.handleChange.bind(this)}
               placeholder="Add an item..."
             />
             <button type="submit">Add item</button>
@@ -50,12 +46,4 @@ class AddItem extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onSubmit: text => {
-      dispatch(addItem(text))
-    },
-  }
-}
-
-export default connect(null, mapDispatchToProps)(AddItem)
+export default AddItem

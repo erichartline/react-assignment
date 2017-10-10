@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
 import SingleItem from "./SingleItem"
 import { List } from "../styles"
 
@@ -8,7 +9,17 @@ class ItemList extends Component {
     return (
       <List>
         <h2>My Items ({counter})</h2>
-        <SingleItem items={items} counter={counter} />
+        <ul>
+          {items.map((item, index) => {
+            return (
+              <SingleItem
+                key={index}
+                item={item}
+                actions={this.props.actions}
+              />
+            )
+          })}
+        </ul>
       </List>
     )
   }

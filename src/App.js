@@ -1,4 +1,7 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
+import * as actions from "./actions"
 import AddItem from "./components/AddItem"
 import Header from "./components/Header"
 import ItemList from "./components/ItemList"
@@ -6,14 +9,25 @@ import { Container } from "./styles"
 
 class App extends Component {
   render() {
+    const { actions, counter, items } = this.props
     return (
       <Container>
         <Header />
-        <AddItem />
-        <ItemList />
+        <AddItem addItem={actions.addItem} />
+        <ItemList actions={actions} counter={counter} items={items} />
       </Container>
     )
   }
 }
 
-export default App
+const mapStateToProps = state => {
+  return state
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators(actions, dispatch),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
