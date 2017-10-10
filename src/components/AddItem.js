@@ -25,6 +25,7 @@ class AddItem extends Component {
       return
     }
     this.props.addItem(this.state.text)
+    this.setState({ text: "" })
   }
 
   render() {
