@@ -29,7 +29,7 @@ export const Item = styled.li`
   text-align: left;
   padding: 10px 10px 10px 10px;
   margin: 10px auto 10px auto;
-  width: 25%;
+  width: 60%;
 `
 
 export const InputBar = styled.div`
@@ -40,12 +40,13 @@ export const InputBar = styled.div`
 
 export const ItemText = styled.div`
   text-align: left;
-  width: 90%;
+  width: 80%;
   display: inline-block;
 `
 
 export const DeleteItem = styled.div`
   text-align: right;
+  width: 20%;
   display: inline-block;
   a {
     text-decoration: none;
