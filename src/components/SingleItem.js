@@ -28,4 +28,12 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(SingleItem)
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteItem: text => {
+      dispatch(removeItem(text))
+    },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleItem)

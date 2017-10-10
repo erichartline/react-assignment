@@ -28,6 +28,7 @@ class AddItem extends Component {
     if (!this.state.text.trim()) {
       return
     }
+    this.props.onSubmit(this.state.text)
   }
 
   render() {

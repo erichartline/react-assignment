@@ -6,19 +6,18 @@ const rootReducer = (state = [], action) => {
       return [
         ...state,
         {
-          counter: action.payload.counter,
-          text: action.payload.text,
-          items: [...this.state.items, action.payload.text],
+          counter: action.counter,
+          text: action.text,
         },
       ]
     case REMOVE_ITEM:
       return [
         ...state,
         {
-          counter: action.payload.counter,
+          counter: action.counter,
           items: [
-            ...state.slice(0, action.payload.text),
-            ...state.slice(action.payload.text + 1),
+            ...state.slice(0, action.text),
+            ...state.slice(action.text + 1),
           ],
           // action.items.filter(item => action.payload !== item)
         },
