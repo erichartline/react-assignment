@@ -12,13 +12,6 @@ const rootReducer = (state, action) => {
         ],
         counter: state.counter + 1,
       })
-    // return [
-    //   ...state,
-    //   {
-    //     counter: action.counter,
-    //     text: action.text,
-    //   },
-    // ]
     case REMOVE_ITEM:
       return Object.assign({}, state, {
         items: state.items.filter(item => {
@@ -26,18 +19,6 @@ const rootReducer = (state, action) => {
         }),
         counter: state.counter - 1,
       })
-
-    // [
-    //   ...state,
-    //   {
-    //     counter: action.counter,
-    //     text: [
-    //       ...state.slice(0, action.text),
-    //       ...state.slice(action.text + 1),
-    //     ],
-    //     // action.items.filter(item => action.payload !== item)
-    //   },
-    // ]
     default:
       return state
   }
