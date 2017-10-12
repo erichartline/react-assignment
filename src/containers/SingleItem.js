@@ -2,10 +2,12 @@ import React, { Component } from "react"
 import { DeleteItem, PlainButton, ItemText } from "../styles"
 
 class SingleItem extends Component {
+  // set default prop for this component
   static defaultProps = {
     item: "",
   }
 
+  // access removeItem action when user clicks delete
   handleDelete = () => {
     this.props.actions.removeItem(this.props.item)
   }
