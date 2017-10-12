@@ -10,8 +10,6 @@
     "rebass": "^1.0.4",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "^2.2.0",
     "styled-components": "^2.2.1"
   },
   "lint-staged": {

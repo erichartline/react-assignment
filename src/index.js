@@ -4,6 +4,7 @@ import { Provider } from "react-redux"
 import configureStore from "./store/store.js"
 import App from "./App"
 
+// set empty initial state
 let initialState = {
   text: "",
   items: [],
