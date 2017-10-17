@@ -1,5 +1,5 @@
 import React from "react"
-import SingleItem from "../containers/SingleItem"
+import SingleItem from "../components/SingleItem"
 import { List, Item } from "../styles"
 
 // functional component that keeps track of timer then creates new array with
