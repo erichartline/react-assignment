@@ -1,28 +1,22 @@
-import React, { Component } from "react"
+import React from "react"
 import { DeleteItem, PlainButton, ItemText } from "../styles"
 
-class SingleItem extends Component {
-  // set default prop for this component
-  static defaultProps = {
-    item: "",
-  }
-
-  // access removeItem action when user clicks delete
-  handleDelete = () => {
-    this.props.actions.removeItem(this.props.item)
-  }
-
-  render() {
-    const { item } = this.props
-    return (
-      <div>
-        <ItemText>{item.text}</ItemText>
-        <DeleteItem>
-          <PlainButton onClick={this.handleDelete.bind(this)}>X</PlainButton>
-        </DeleteItem>
-      </div>
-    )
-  }
+// functional component to display each item
+// each item has a delete button that calls back to the removeItem action
+const SingleItem = ({ item, actions }) => {
+  return (
+    <div>
+      <ItemText>{item.text}</ItemText>
+      <DeleteItem>
+        <PlainButton
+          onClick={() => {
+            actions.removeItem(item)
+          }}>
+          X
+        </PlainButton>
+      </DeleteItem>
+    </div>
+  )
 }
 
 export default SingleItem
